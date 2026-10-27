@@ -8,6 +8,7 @@ export function toFormspreePayload(data:z.infer<typeof enquirySchema>) {
   const {requestId,website,notes,...fields}=data;
   return {
     ...fields,
+    language:'en-CA',
     message:notes,
     reference:'TF-'+requestId.toUpperCase(),
     _subject:'Turfy '+data.type+' enquiry',

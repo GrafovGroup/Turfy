@@ -96,3 +96,12 @@
 @media(max-width:540px){.header-quote{white-space:nowrap;font-size:11px}.header-quote svg{display:none}}
 
 @media(max-width:540px){.mobile-menu nav{left:-18px;right:-18px}}
+
+.topbar-actions{display:flex;align-items:center;gap:20px;white-space:nowrap}.language-switch{border-left:1px solid #ffffff70;padding-left:18px;font-weight:700}.topbar-actions a{white-space:nowrap}.topbar-actions a:focus-visible{outline-color:#d2fa69}
+@media(max-width:540px){.topbar{font-size:10px;padding-inline:12px;gap:6px}.topbar-actions{gap:9px}.language-switch{padding-left:9px}.topbar>span{white-space:nowrap}.phone-intro{display:none}}
+@media(max-width:360px){html[lang="fr-CA"] .topbar>span{white-space:nowrap;font-size:9px;line-height:1.2}.topbar-actions{gap:7px}.language-switch{padding-left:7px}}
+
+html[lang="fr-CA"] .collection-directory-item h3{font-size:clamp(22px,2vw,29px)}
+@media(max-width:540px){html[lang="fr-CA"] .enquiry-types label{font-size:12px;gap:6px;padding-inline:5px}.topbar-actions a{display:inline-block}}
+.hero-paths{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-paths>a,.hero-paths>a>span{min-width:0}.hero-paths small{overflow-wrap:anywhere}.hero-paths svg{flex-shrink:0}
+@media(max-width:360px){.hero-paths>a{padding-inline:10px}.hero-paths small{font-size:9px;letter-spacing:.02em}}
