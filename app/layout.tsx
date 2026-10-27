@@ -1,0 +1,6 @@
+import type {Metadata} from 'next';
+import './globals.css';
+import {origin} from '@/lib/seo';
+import {Header, Footer} from '@/components/turfy';
+export const metadata:Metadata={metadataBase:new URL(origin),verification:{google:'W20DGDpnEvEn2iqNJJJrZtWffEMUjdqEBGkGU78CWfU',other:{'msvalidate.01':'8540AF3FE8C8197267E84BBE602115F7'}},title:{default:'Turfy.ca — Artificial Turf. Made Easy.',template:'%s | Turfy.ca'},description:'Discover artificial turf for homes, commercial spaces, pets, golf and play. Buy turf or request event turf rentals with Turfy.',icons:{icon:'/favicon.svg',shortcut:'/favicon.svg'}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en-CA"><body><a className="skip-link" href="#main">Skip to content</a><Header/>{children}<Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization','@id':origin+'/#organization',name:'Turfy',areaServed:{'@type':'Country',name:'Canada'},logo:origin+'/brand/turfy-turf-logo.png',url:origin,telephone:'+18336969996',description:'Artificial turf sales, rentals and installation enquiries for Canadian projects.'})}}/></body></html>}

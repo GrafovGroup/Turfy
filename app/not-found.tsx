@@ -1,0 +1,2 @@
+
+export default function NotFound(){return <main id="main" className="wrap section"><span className="eyebrow">A little off the green</span><h1 style={{fontSize:56,margin:'25px 0'}}>Page not found.</h1><p>Let’s get you back to finding your turf.</p><div className="action-row"><a className="button dark" href="/">Go home</a><a className="button outline" href="/collections">Browse turf</a></div></main>}

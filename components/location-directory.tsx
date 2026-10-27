@@ -1,0 +1,6 @@
+"use client";
+import {useState} from 'react';
+
+import {Search,ArrowUpRight} from 'lucide-react';
+import {cities,provinces} from '@/lib/locations';
+export function LocationDirectory(){const[query,setQuery]=useState('');const norm=(v:string)=>v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');const matches=cities.filter(c=>norm(c.name+' '+c.provinceName+' '+c.province).includes(norm(query)));return <div><label className="city-search"><Search size={22}/><span className="visually-hidden">Find a city or province</span><input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find your city or province"/></label><p className="directory-count" aria-live="polite">{matches.length} city {matches.length===1?'guide':'guides'}{query?' found':''}</p>{matches.length===0?<div className="note">No city matches that search. You can still <a className="text-link" href="/quote">send us your project location</a> so availability can be reviewed.</div>:Object.entries(provinces).map(([code,name])=>{const group=matches.filter(c=>c.province===code);return group.length?<section className="province-group" key={code}><h2>{name}</h2><div className="city-links">{group.map(c=><a href={'/locations/'+c.slug} key={c.slug}><span>{c.name}</span><ArrowUpRight size={18}/></a>)}</div></section>:null;})}</div>}

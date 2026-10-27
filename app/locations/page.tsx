@@ -1,0 +1,6 @@
+import {PageIntro} from '@/components/turfy';
+import {LocationDirectory} from '@/components/location-directory';
+import {BreadcrumbSchema} from '@/components/seo';
+import {pageMetadata} from '@/lib/seo';
+export const metadata=pageMetadata('Artificial turf across Canada — city project guides','Find turf product, rental and installation planning guidance for 65 Canadian cities. Share your location to check product delivery and service availability.','/locations');
+export default function Locations(){return <main id="main"><BreadcrumbSchema items={[{name:'Home',path:'/'},{name:'Canadian cities',path:'/locations'}]}/><PageIntro eyebrow="Your city. Your kind of green." title="A greener idea, wherever you are.">Explore project guidance for major Canadian cities, from everyday backyards to temporary event spaces. Start with your location and tell us what you have in mind.</PageIntro><section className="wrap section"><div className="product-notice"><p><strong>Availability starts with your address.</strong> Product delivery, rentals and installation are reviewed for each location, date and project. These city guides help you plan an enquiry; they are not a list of local stores or guaranteed service areas.</p></div><LocationDirectory/></section></main>}

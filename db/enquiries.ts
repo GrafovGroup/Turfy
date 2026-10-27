@@ -1,0 +1,4 @@
+import {env} from 'cloudflare:workers';
+import {enquirySchema} from '@/lib/enquiry';
+import type {z} from 'zod';
+export async function saveEnquiry(d:z.infer<typeof enquirySchema>){if(!env.DB)throw Error('Enquiry storage unavailable');const reference='TF-'+d.requestId.toUpperCase();await env.DB.prepare('INSERT INTO enquiries (id,reference,type,name,email,phone,company,city,postal_code,application,area,unit,surface,setting,start_date,end_date,setup_date,removal_date,delivery,installation,removal,notes,consent,created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO NOTHING').bind(d.requestId,reference,d.type,d.name,d.email,d.phone,d.company,d.city,d.postalCode,d.application,d.area,d.unit,d.surface,d.setting,d.startDate,d.endDate,d.setupDate,d.removalDate,d.delivery?1:0,d.installation?1:0,d.removal?1:0,d.notes,1,new Date().toISOString()).run();return reference;}
