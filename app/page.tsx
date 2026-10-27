@@ -1,3 +1,4 @@
+import {GuideFeature} from '@/components/guides';
 
 import { ArrowUpRight, MoveRight } from 'lucide-react';
 import { CollectionGrid, Cta } from '@/components/turfy';
@@ -18,5 +19,5 @@ export default function Home(){return <main id="main">
 <details><summary>Where does Turfy provide turf?</summary><p>Turfy accepts sales, rental and installation enquiries across Canada. Delivery, inventory and installation availability are confirmed for your address, dates and project scope. Browse our <a href="/locations">Canadian location guides</a>.</p></details>
 <details><summary>What should I include in my quote request?</summary><p>Tell us your city and province, intended use and approximate area. Add your current surface and desired timing if known. For rentals, include event dates, the venue and whether you need delivery, installation or removal.</p></details>
 </section>
-  <Cta/>
+  <GuideFeature/><Cta/>
 </main>}
